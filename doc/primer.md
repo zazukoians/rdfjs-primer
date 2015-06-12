@@ -15,3 +15,24 @@ Currently you need to consult the [RDF-Ext](http://bergos.github.io/rdf-ext-spec
 The `Store` object is the basic abstraction of RDF-Ext. It provides ways to work with multiple graphs and access them over standardized interfaces.
 
 ### Graph
+
+### Clownface
+
+Clownface is an API to traverse `Graph` and `Store` objects.
+
+#### Clownface Graph
+
+`cf.Graph` requires a `Graph` object in the constructor.
+That object will be used to do the traversing.
+All methods of the `cf.Graph` object are synchronous.
+Clownface uses a set of nodes as context that is used for further traversing.
+
+#### Clownface Store
+
+`cf.Store` requires a `Store` object in the constructor.
+That object will be used to do the traversing.
+All methods of the `cf.Graph` are supported.
+The context of `cf.Store` uses a combination of node + graph.
+Methods that cross a graph border are asynchronous.
+The Promise API is used to handle these operations.
+`.jump` loops over all selected nodes, fetches the graphs and uses the graphs as new context.
