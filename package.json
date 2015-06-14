@@ -19,5 +19,8 @@
   "homepage": "https://github.com/zazukoians/rdfjs-primer#readme",
   "dependencies": {
     "rdf-ext": "0.2.*"
+  },
+  "devDependencies": {
+    "marked": "0.3.*"
   }
 }
